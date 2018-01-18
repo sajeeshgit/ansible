@@ -1,0 +1,27 @@
+---
+# tasks file for systems
+  - name: create admin user
+    user:
+      name: admin
+      uid: 5001  
+      state: present 
+
+  - name: remove user dojo
+    user:
+      name: dojo
+      state: absent
+
+  - name: Install tree
+    yum:
+      name: tree
+      state: installed
+
+  - name: intsall NTP
+    yum:
+      name: ntp
+      state: installed 
+ 
+  - name: Start NTP service 
+    service:
+      name : ntpd
+      state: started

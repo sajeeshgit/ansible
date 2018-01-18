@@ -1,0 +1,46 @@
+---
+  - name: common systems configurations for all linux hosts 
+    hosts: all
+    become: true
+    tasks: 
+      - name: create admin user
+        user:
+          name: admin
+          uid: 5001  
+          state: present 
+
+      - name: remove user dojo
+        user:
+         name: dojo
+         state: absent
+
+      - name: Install tree
+        yum:
+          name: tree
+          state: installed
+
+      - name: intsall NTP
+        yum:
+          name: ntp
+          state: installed 
+ 
+      - name: Start NTP service 
+        service:
+          name : ntpd
+          state: started
+
+  - name: Setup app servers
+    hosts: app
+    become: true
+    tasks:
+      - name : Create a deploy user
+        user:
+          name: deploy
+          uid: 5003
+          state: present
+
+      - name: Install Git
+        package:
+          name: git
+          state: installed 
+...  

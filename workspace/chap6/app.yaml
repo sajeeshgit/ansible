@@ -1,0 +1,10 @@
+---
+  - name: Play for apache
+    hosts: app
+    become: true
+    roles:
+      - apache
+      - php
+      - systems
+      - froentend
+...

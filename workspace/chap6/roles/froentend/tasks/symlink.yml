@@ -1,0 +1,8 @@
+---
+  - file:
+      src: /opt/app/release/devops-demo-app-1.4
+      dest: /var/www/html/app
+      owner: apache
+      group: apache
+      state: link
+...

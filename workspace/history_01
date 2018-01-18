@@ -1,0 +1,112 @@
+    1  ssh devops@lb
+    2  ssh devops@app2
+    3  ls -la
+    4  ls- al
+    5  ls -al
+    6  cd chap4/
+    7  ls -al
+    8  cd environment/
+    9  ls -la
+   10  vi prod 
+   11  ls -al
+   12  cat prod 
+   13  cd ..
+   14  ls -la
+   15  touch ansible.cfg
+   16  vi ansible.cfg 
+   17  ls -la
+   18  ansible all -m ping
+   19  ls -al
+   20  cd environment/
+   21  ls -al
+   22  vi prod 
+   23  cd ..
+   24  ls -al
+   25  pwd
+   26  ls -al
+   27  cat ansible.cfg 
+   28  mv environment/ environments
+   29  ansible all -m ping
+   30  vi ansible.cfg 
+   31  cd 
+   32  ls -al
+   33  cat ansible.log 
+   34  cd -
+   35  ls -la
+   36  cd environments/
+   37  ls -al
+   38  vi prod 
+   39  ansible all -a hostname
+   40  ls -al
+   41  cd ..
+   42  ansible all -a hostname
+   43  ansible all -a "hostname ; uptime "
+   44  ansible all -a uptime
+   45  ansible app* -a uptime
+   46  ansible app* -a hostname
+   47  vi environments/prod 
+   48  ansible app* -a 
+   49  cd ..
+   50  ls -l
+   51  vi ansible.cfg 
+   52  cd chap4/
+   53  ls -al
+   54  vi ansible.cfg 
+   55  ansible all -a uptime
+   56  ssh devops@db
+   57  ssh devops@app1
+   58  ls -la
+   59  ansible-doc
+   60  ansible-doc -l
+   61  cd chap4/
+   62  ls -lla
+   63  ls -la
+   64  ssh devops@lb
+   65  ansible lb -m yum -s -a "name=vim"
+   66  cd ..
+   67  ls -la
+   68  git clone https://github.com/schoolofdevops/ansible-bootcamp-code
+   69  ls -la
+   70  cd ansible-bootcamp-code/
+   71  ls -al
+   72  mv chap5/ ../
+   73  mv chap6/ ../
+   74  mv chap7/ ../
+   75  mv chap8/ ../
+   76  ls -la
+   77  cd ..
+   78  ls -la
+   79  cd ansible-bootcamp-code/
+   80  ls -al
+   81  cd chap4/
+   82  ls -la
+   83  cd ..
+   84  ls -la
+   85  rm -rf ansible-bootcamp-code/
+   86  ls -al
+   87  ls -la
+   88  cd chap4/
+   89  ls -al
+   90  ansible prod -m group -s -a "name=admin gid=7045 state=present"
+   91  ansible 'prod:!db' -m user -s -a "name=abc state=present uid=7001 group=admin"
+   92  #ansible app -m copy -s -a 
+   93  ls -al
+   94  touch test.txt
+   95  #ansible app -m copy -s -a "src=test.txt dest=/tmp/test.txt mode=0644"
+   96  ansible app -m copy -s -a "src=test.txt dest=/tmp/test.txt mode=0644"
+   97  ls -la
+   98  cd 
+   99  ls -la
+  100  cd .ssh/
+  101  ls -al
+  102  cat id_rsa 
+  103  cd 
+  104  cd /home/
+  105  ls -al
+  106  cd devops/
+  107  ls -al
+  108  cd .ssh/
+  109  ls -oal
+  110  cd
+  111  history
+  112  history > history_01

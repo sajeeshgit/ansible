@@ -1,0 +1,5 @@
+---
+# tasks file for froentend
+  - import_tasks: diretory.yml
+  - import_tasks: extract.yml
+  - import_tasks: symlink.yml

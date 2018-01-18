@@ -1,0 +1,24 @@
+---
+  - name: common systems configurations for all linux hosts 
+    hosts: all
+    become: true
+    tasks: 
+      - name: create admin user
+        user:
+          name: admin
+          uid: 5001  
+          state: present 
+
+      - name: remove user dojo
+        user:
+         name: dojo
+         state: absent
+
+      - name: Install tree
+        package:
+          name: "{[ tree }}"
+          state: installed
+        with_item:
+          - ntp
+          - tree
+...  
